@@ -1,0 +1,19 @@
+/* Padrão para Celular (1 coluna) */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* Apenas uma borda básica para conseguir enxergar os blocos na tela */
+.coluna {
+    border: 1px solid #000;
+    padding: 16px;
+}
+
+/* Tela Maior / Desktop (3 colunas iguais) */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

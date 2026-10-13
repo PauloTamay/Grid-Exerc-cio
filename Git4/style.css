@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+/* Configuração do Grid */
+.site {
+    display: grid;
+    gap: 10px;
+
+    /* Celular (padrão): tudo empilhado em 1 coluna */
+    grid-template-areas:
+        "cabecalho"
+        "menu"
+        "conteudo"
+        "lateral"
+        "rodape";
+}
+
+/* Nomeando as áreas no CSS direto pelas tags */
+header {
+    grid-area: cabecalho;
+}
+
+nav {
+    grid-area: menu;
+}
+
+main {
+    grid-area: conteudo;
+}
+
+aside {
+    grid-area: lateral;
+}
+
+footer {
+    grid-area: rodape;
+}
+
+/* Estilização básica apenas para visualizar os blocos */
+header,
+nav,
+main,
+aside,
+footer {
+    border: 1px solid #000;
+    padding: 15px;
+}
+
+nav a {
+    margin-right: 15px;
+    color: blue;
+}
+
+/* Telas de Computador (Desktop) */
+@media (min-width: 768px) {
+    .site {
+        grid-template-columns: 3fr 1fr;
+        /* Coluna do main maior que o aside */
+        grid-template-areas:
+            "cabecalho cabecalho"
+            "menu      menu"
+            "conteudo  lateral"
+            "rodape    rodape";
+    }
+}
